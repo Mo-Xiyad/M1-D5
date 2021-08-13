@@ -1,86 +1,60 @@
 const separatorWithHEading = function (heading) {
     console.log(`\n\n<---------------->  ${heading}  <---------------->\n`)
 }
+/* EXERCISE 1
+Write a function "area" which receives 2 parameters (l1,l2) and calculates the area of the associated rectangle.
+*/
+separatorWithHEading('EXERCISE 1')
 
-/* EXERCISE 11
-Write a function "checkArray" which receives an array of random numbers (created with giveMeRandom) and prints, for each item, whether it's bigger than 5.
-The function returns the sum of the numbers bigger than 5.
+const area = function (num1, num2) {
+    let totalArea = (num1 * num2) / 2
+    return totalArea
+}
+console.log(area(11, 12))
+
+/* EXERCISE 2
+Write a function "crazySum" which receives two integers. It should return the sum of those two values, but if the two values are the same then it should return their sum multiplied by 3.
+*/
+separatorWithHEading('EXERCISE 2')
+
+const crazySum = function (num1, num2) {
+    if (num1 === num2) {
+        return (num1 + num2) * 3
+    }
+    return num1 + num2
+}
+
+console.log(crazySum(4, 2))
+
+
+/* EXERCISE 3
+Write a function "crazyDiff" that computes the absolute difference between a given number and 19. 
+It should return triple their absolute difference if the given number is greater than 19.
+*/
+separatorWithHEading('EXERCISE 3')
+
+const crazyDiff = function (num) {
+    if (num > 19) {
+        return (num - 19) * 3;
+    }
+    return (19 - num)
+}
+
+console.log(crazyDiff(20))
+
+/* EXERCISE 4
+Write a function "boundary" which accept an integer n and returns true if n is within 20 and 100 (included) or if it's equal to 400.
 */
 
-// /*
-separatorWithHEading('EXERCISE 11')
-let giveMeRandom = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-
-const checkArray = function (giveMeRandom) {
-    for (let i = 0; i < giveMeRandom.length; i++) {
-        if (giveMeRandom[i] > 5) {
-            console.log(`Your number ${giveMeRandom[i]} is bigger than 5`)
-        }
+const boundary = function (num) {
+    let number = parseInt(num)
+    if (number >= 20 && number <= 100) {
+        console.log(`your number is between 20 and 100`, number)
+    } else if (number === 400) {
+        console.log(`your number is`, number)
+    } else {
+        console.log(`your number is ${number}`)
     }
 }
 
-checkArray(giveMeRandom)
-// */
-
-/* EXERCISE 12
-In your eCommerce you have an array of objects called shoppingCart. In this array you have a number of objects with a price, a name, an id and the quantity to be shipped.
-Create a function "shippingCartTotal" which calculates the total due to the shop.
-*/
-
-separatorWithHEading('EXERCISE 12')
-
-let shoppingCart = [
-    { name: 'iphone', price: 100, id: 10, quantity: 2 },
-    { name: 'android', price: 205, id: 20, quantity: 5 },
-    { name: 'glaxy', price: 124, id: 55, quantity: 21 },
-    { name: 'plane', price: 15415, id: 98, quantity: 24 },
-]
-
-const shippingCartTotal = function (shoppingCart) {
-    total = 0
-    for (let i = 0; i < shoppingCart.length; i++) {
-        total += shoppingCart[i]['price']
-    }
-    return total
-}
-
-console.log(`Your total price is`, shippingCartTotal(shoppingCart))
-
-
-/* EXERCISE 13
-In your eCommerce you have an array of objects called shoppingCart. In this array you have a number of objects with a price, a name, an id and the quantity to be shipped.
-Create a function "addToShoppingCart" which receives a new object, adds it to shoppingCart and returns the total number of items in the shoppingCart.
-*/
-
-separatorWithHEading('EXERCISE 13')
-
-
-const addToShoppingCart = function (name, price, id, quantity) {
-    let addNewItem = {}
-    addNewItem.name = name
-    addNewItem.price = price
-    addNewItem.id = id
-    addNewItem.quantity = quantity
-    shoppingCart.push(addNewItem)
-    return console.log(`New item has been added to your cart`, shoppingCart)
-}
-
-addToShoppingCart('car', 500, 25, 2)
-
-
-/* EXERCISE 14
-In your eCommerce you have an array of objects called shoppingCart. In this array you have a number of objects with a price, a name, an id and the quantity to be shipped.
-Create a function "maxShoppingCart" which receives the shoppingCart array and returns the most expensive item in the array.
-*/
-
-separatorWithHEading('EXERCISE 14')
-
-const maxShoppingCart = function (shoppingCart) {
-    let mostExpensiveItem = 0
-    for (let i = 0; i < shoppingCart.length; i++) {
-        // code goes here
-    }
-    return mostExpensiveItem
-}
-
-console.log(maxShoppingCart(shoppingCart))
+boundary(255)

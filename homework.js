@@ -48,6 +48,9 @@ Write a function "boundary" which accept an integer n and returns true if n is w
 
 const boundary = function (num) {
     let number = parseInt(num)
+    if (!Number.isSafeInteger(num)) {
+
+    };
     if (number >= 20 && number <= 100) {
         console.log(`your number is between 20 and 100`, number)
     } else if (number === 400) {
@@ -57,4 +60,4 @@ const boundary = function (num) {
     }
 }
 
-boundary(255)
+boundary('5')

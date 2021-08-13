@@ -30,9 +30,9 @@ Create a function "shippingCartTotal" which calculates the total due to the shop
 separatorWithHEading('EXERCISE 12')
 
 let shoppingCart = [
-    { price: 100, name: 'iphone', id: 10, quantity: 2 },
-    { price: 205, name: 'android', id: 20, quantity: 5 },
-    { price: 124, name: 'glaxy', id: 55, quantity: 21 }
+    { name: 'iphone', price: 100, id: 10, quantity: 2 },
+    { name: 'android', price: 205, id: 20, quantity: 5 },
+    { name: 'glaxy', price: 124, id: 55, quantity: 21 }
 ]
 
 const shippingCartTotal = function (shoppingCart) {
@@ -44,3 +44,24 @@ const shippingCartTotal = function (shoppingCart) {
 }
 
 console.log(`Your total price is`, shippingCartTotal(shoppingCart))
+
+
+/* EXERCISE 13
+In your eCommerce you have an array of objects called shoppingCart. In this array you have a number of objects with a price, a name, an id and the quantity to be shipped.
+Create a function "addToShoppingCart" which receives a new object, adds it to shoppingCart and returns the total number of items in the shoppingCart.
+*/
+
+separatorWithHEading('EXERCISE 13')
+
+
+const addToShoppingCart = function (name, price, id, quantity) {
+    let addNewItem = {}
+    addNewItem.name = name
+    addNewItem.price = price
+    addNewItem.id = id
+    addNewItem.quantity = quantity
+    shoppingCart.push(addNewItem)
+    return console.log(`New item has been added to your cart`, shoppingCart)
+}
+
+addToShoppingCart('car', 500, 25, 2)

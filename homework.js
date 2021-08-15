@@ -7,10 +7,15 @@ Write a function "area" which receives 2 parameters (l1,l2) and calculates the a
 separatorWithHEading('EXERCISE 1')
 
 const area = function (num1, num2) {
-    let totalArea = (num1 * num2) / 2
-    return totalArea
+    return num1 * num2
 }
 console.log(area(11, 12))
+
+
+console.log(`Doing the function with arrow Function`)
+const areaWIthArrow = (num1, num2) => num1 * num2
+console.log(areaWIthArrow(11, 12))
+
 
 /* EXERCISE 2
 Write a function "crazySum" which receives two integers. It should return the sum of those two values, but if the two values are the same then it should return their sum multiplied by 3.
@@ -23,9 +28,12 @@ const crazySum = function (num1, num2) {
     }
     return num1 + num2
 }
-
 console.log(crazySum(4, 2))
 
+
+console.log(`Doing the function with arrow Function`)
+const crazySumWIthArrow = (num1, num2) => num1 === num2 ? (num1 + num2) * 3 : num1 + num2
+console.log(crazySumWIthArrow(4, 2))
 
 /* EXERCISE 3
 Write a function "crazyDiff" that computes the absolute difference between a given number and 19. 
@@ -35,12 +43,15 @@ separatorWithHEading('EXERCISE 3')
 
 const crazyDiff = function (num) {
     if (num > 19) {
-        return (num - 19) * 3;
+        return Math.abs(num - 19) * 3
     }
-    return (19 - num)
+    return Math.abs(num - 19)
 }
-
 console.log(crazyDiff(20))
+
+console.log(`Doing the function with arrow Function`)
+const crazyDiffWIthArrow = (num) => num > 19 ? Math.abs(num - 19) * 3 : Math.abs(num - 19)
+console.log(crazyDiffWIthArrow(15))
 
 /* EXERCISE 4
 Write a function "boundary" which accept an integer n and returns true if n is within 20 and 100 (included) or if it's equal to 400.
@@ -49,20 +60,27 @@ separatorWithHEading('EXERCISE 4')
 
 const boundary = function (num) {
     let number = parseInt(num)
-    if (!Number.isSafeInteger(num)) {
 
-    };
-    if (number >= 20 && number <= 100) {
-        console.log(`your number is between 20 and 100`, number)
-    } else if (number === 400) {
-        console.log(`your number is`, number)
+    if ((number > 20 && number < 100) || number === 400) {
+        return true
     } else {
-        console.log(`your number is ${number}`)
+        return false
     }
+
+    // if (number >= 20 && number <= 100) {
+    //     console.log(`your number is between 20 and 100`, number)
+    // } else if (number === 400) {
+    //     console.log(`your number is`, number)
+    // } else {
+    //     console.log(`your number is ${number}`)
+    // }
 }
+console.log(boundary('5'))
 
-boundary('5')
 
+console.log(`Doing the function with arrow Function`)
+const boundaryWIthArrow = (num) => ((num > 20 && num <= 100) || num === 400 ? true : false);
+console.log(boundaryWIthArrow(400))
 
 /* EXERCISE 5
 Write a function "strivify" which accepts a string.
@@ -80,6 +98,10 @@ const strivify = function (string) {
 }
 console.log(strivify(`in front of the given string`))
 
+
+console.log(`Doing the function with arrow Function`)
+const strivifyWIthArrow = (str) => str.startsWith('Strive') ? str : 'Strive ' + str;
+console.log(strivifyWIthArrow(`Doing the function with arrow Function`))
 
 /* EXERCISE 6
 Write a function "check3and7" which accepts a positive number and check if it is a multiple of 3 or a multiple of 7.
@@ -103,6 +125,9 @@ const check3and7 = function (num) {
 console.log(check3and7(9))
 
 
+console.log(`Doing the function with arrow Function`)
+const check3and7WIthArrow = (num) => num % 3 === 0 || num % 7 === 0 ? 'number is a multiple of 3 or 7' : 'Your input was not a multiple of 3 or 7'
+console.log(check3and7WIthArrow(10))
 
 /* EXERCISE 7
 Write a function "reverseString" to programmatically reverse a given string (es.: Strive => evirtS).
@@ -130,6 +155,10 @@ const reverseString = function (givenString) {
 console.log(reverseString('Strive'))
 
 
+console.log(`Doing the function with arrow Function`)
+const reverseStringWIthArrow = str => str.split('').reverse().join('')
+console.log(reverseStringWIthArrow('Hellow world'))
+
 /* EXERCISE 8
 Write a function "upperFirst" to capitalize the first letter of each word of a given string passed as a parameter.
 */
@@ -137,7 +166,6 @@ Write a function "upperFirst" to capitalize the first letter of each word of a g
 separatorWithHEading('EXERCISE 8')
 
 const upperFirst = function (givenString) {
-    // return givenString.charAt(0).toUpperCase() + givenString.slice(1)
     let stringsOfArray = givenString.split(" ")
     let newArray = []
 
@@ -146,9 +174,12 @@ const upperFirst = function (givenString) {
     }
     return newArray.join(" ")
 }
-
 console.log(upperFirst('capitalize the first letter of each word'))
 
+
+console.log(`Doing the function with arrow Function`)
+const upperFirstWIthArrow = (str) => str.charAt(0).toUpperCase() + str.slice(1)
+console.log(upperFirstWIthArrow('Hellow world'))
 
 /* EXERCISE 9
 Write a function "cutString" to create a new string without the first and last character of a given string.

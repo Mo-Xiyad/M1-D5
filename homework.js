@@ -173,3 +173,21 @@ const cutString = function (givenString) {
 // }
 
 console.log(cutString('without the first and last character'))
+
+
+/* EXERCISE 10
+Write a function "giveMeRandom" which accepts a number n and returns an array containing n random numbers between 0 and 10.
+*/
+
+separatorWithHEading('EXERCISE 10')
+
+const giveMeRandom = function (number) {
+    let numberArray = []
+    for (let i = 0; i < number; i++) {
+        numberArray.push(Math.floor(Math.random() * 10))
+    }
+
+    return numberArray
+}
+
+console.log(giveMeRandom(10))

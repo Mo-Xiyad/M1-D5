@@ -45,6 +45,7 @@ console.log(crazyDiff(20))
 /* EXERCISE 4
 Write a function "boundary" which accept an integer n and returns true if n is within 20 and 100 (included) or if it's equal to 400.
 */
+separatorWithHEading('EXERCISE 4')
 
 const boundary = function (num) {
     let number = parseInt(num)
@@ -61,3 +62,50 @@ const boundary = function (num) {
 }
 
 boundary('5')
+
+
+/* EXERCISE 5
+Write a function "strivify" which accepts a string.
+It should add the word "Strive" in front of the given string, but if the given string already begins with "Strive", then it should just return the original string.
+*/
+separatorWithHEading('EXERCISE 5')
+
+const strivify = function (string) {
+    if (string.startsWith('Strive')) {
+        return string
+    }
+    else {
+        return 'Strive ' + string
+    }
+}
+console.log(strivify(`in front of the given string`))
+
+
+/* EXERCISE 6
+Write a function "check3and7" which accepts a positive number and check if it is a multiple of 3 or a multiple of 7.
+HINT: Module Operator
+*/
+separatorWithHEading('EXERCISE 6')
+
+const check3and7 = function (num) {
+    if (num >= 0) {
+        if (num % 3 === 0) {
+            return `${num} is a multiple of 3`
+        } else if (num % 7 === 0) {
+            return `${num} is a multiple of 7`
+        } else {
+            return `Your input was not a multiple of 3 or 7`
+        }
+    } else {
+        return `Your input was not a positive number`
+    }
+}
+console.log(check3and7(9))
+
+
+
+/* EXERCISE 7
+Write a function "reverseString" to programmatically reverse a given string (es.: Strive => evirtS).
+*/
+
+separatorWithHEading('EXERCISE 7')

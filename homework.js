@@ -109,3 +109,19 @@ Write a function "reverseString" to programmatically reverse a given string (es.
 */
 
 separatorWithHEading('EXERCISE 7')
+
+const reverseString = function (givenString) {
+    // This variable will split the string into new array ---> letter by letter since it is only one word. splitString = "hello".split("");
+    let splitString = givenString.split("")
+
+    // this new array will be reversed ["S", "t", "r", "i", "v", "e"].reverse();
+    let reverseLetters = splitString.reverse()
+
+    // Using the join() method to join all elements of the array into a string
+    // reverseCompleted = ["o", "l", "l", "e", "h"].join("");
+    let reverseCompleted = reverseLetters.join("")
+
+    return reverseCompleted
+}
+
+console.log(reverseString('Strive'))

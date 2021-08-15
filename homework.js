@@ -111,6 +111,9 @@ Write a function "reverseString" to programmatically reverse a given string (es.
 separatorWithHEading('EXERCISE 7')
 
 const reverseString = function (givenString) {
+    // option one to do this 
+    // return givenString.split("").reverse("").join("");
+
     // This variable will split the string into new array ---> letter by letter since it is only one word. splitString = "hello".split("");
     let splitString = givenString.split("")
 
@@ -125,3 +128,48 @@ const reverseString = function (givenString) {
 }
 
 console.log(reverseString('Strive'))
+
+
+/* EXERCISE 8
+Write a function "upperFirst" to capitalize the first letter of each word of a given string passed as a parameter.
+*/
+
+separatorWithHEading('EXERCISE 8')
+
+const upperFirst = function (givenString) {
+    // return givenString.charAt(0).toUpperCase() + givenString.slice(1)
+    let stringsOfArray = givenString.split(" ")
+    let newArray = []
+
+    for (let i = 0; i < stringsOfArray.length; i++) {
+        newArray.push(stringsOfArray[i][0].toUpperCase() + stringsOfArray[i].replace(stringsOfArray[i][0], ``))
+    }
+    return newArray.join(" ")
+}
+
+console.log(upperFirst('capitalize the first letter of each word'))
+
+
+/* EXERCISE 9
+Write a function "cutString" to create a new string without the first and last character of a given string.
+*/
+
+separatorWithHEading('EXERCISE 9')
+
+const cutString = function (givenString) {
+    let arrayOfStrings = givenString.split(" ")
+    let newArray = []
+
+    for (let i = 0; i < arrayOfStrings.length; i++) {
+        newArray.push(arrayOfStrings[i].slice(1, arrayOfStrings[i].length - 1))
+    }
+
+    return newArray.join(" ")
+
+}
+
+// function cutString(str) {
+//     return str.slice(1, str.length - 1);
+// }
+
+console.log(cutString('without the first and last character'))

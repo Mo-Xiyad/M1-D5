@@ -83,4 +83,65 @@ const maxShoppingCart = function (shoppingCart) {
     return mostExpensiveItem
 }
 
-console.log(maxShoppingCart(shoppingCart))
+console.log(maxShoppingCart(shoppingCart), `\n`)
+
+
+// #########################  Extra  Methods of Array  ###########################
+separatorWithHEading('array.filter()')
+
+const _arrayOfNumbers = [1, -2, 66, 9, 89, 7, 54, -22, 88, -56, 568]
+
+const fillterd = _arrayOfNumbers.filter(function (value) {
+    return value >= 0
+})
+
+// same code but a little simple
+const filtered = _arrayOfNumbers.filter(num => num >= 0)
+
+console.log(`Filtered Array of numbers with positive numbers `, fillterd)
+
+
+// #########################  Mapping Array  ###########################
+separatorWithHEading('Mapping an Array')
+
+// ******* Mapping number to a string *******
+// each item in an array can be mapped into something else using (map) method
+const arrayMapToHtml = fillterd.map(num => '<li>' + num + '</li>')
+console.log(arrayMapToHtml)
+
+// its been concatnated into a string using the join method. 
+const htmlListOfAnArray = '<ul>' + arrayMapToHtml.join(' ') + '</ul>'
+console.log(htmlListOfAnArray)
+
+
+// *******  Mapping an array into an object  *******
+
+const arrayOfnumbers = [1, -2, 66, 9, 89, 7, 54, -22, 88, -56, 568]
+
+
+
+
+/*
+// This is also an option (Same output )
+const mapItem = fillterd.map(num => {
+    const obj = { value: num };
+    return obj
+})
+
+const mapItem = fillterd.map(num => {
+    return { value: num };
+})
+
+// This is also an option (Same output )
+const mapItem = fillterd.map(num => ({ value: num }))
+
+// Chaining both filter and the map method
+const mapItem = arrayOfnumbers
+                .filter(num => num >= 0)
+                .map(num => ({ value: num }));
+*/
+const mapItem = arrayOfnumbers
+    .filter(num => num >= 0)
+    .map(num => ({ value: num }));
+
+console.log(mapItem)
